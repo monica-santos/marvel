@@ -1,6 +1,6 @@
-import 'styled-components'
+import "styled-components"
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       red: string
@@ -11,13 +11,34 @@ declare module 'styled-components' {
       white: string
     }
     gradients: {
-      blue: string
-      red: string
-      purple: string
-      green: string
-      pink: string
-      black: string
-      dark: string
+      blue: {
+        colors: string[]
+        start: string[]
+      }
+      red: {
+        colors: string[]
+        start: string[]
+      }
+      purple: {
+        colors: string[]
+        start: string[]
+      }
+      green: {
+        colors: string[]
+        start: string[]
+      }
+      pink: {
+        colors: string[]
+        start: string[]
+      }
+      black: {
+        colors: string[]
+        start: string[]
+      }
+      dark: {
+        colors: string[]
+        start: string[]
+      }
     }
   }
 }
