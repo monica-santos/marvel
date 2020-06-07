@@ -1,19 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import { AppLoading } from "expo"
+import { useFonts } from "@use-expo/font"
+import { ThemeProvider } from "styled-components"
+import Routes from "./src/Routes"
+
+import { theme } from "./src/styles/theme"
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
-}
+  const [fontsLoaded] = useFonts({
+    "gilroy-bold": require("./src/assets/fonts/gilroy-bold.ttf"),
+    "gilroy-heavy": require("./src/assets/fonts/gilroy-heavy.ttf"),
+    "gilroy-medium": require("./src/assets/fonts/gilroy-medium.ttf"),
+    "gilroy-regular": require("./src/assets/fonts/gilroy-regular.ttf"),
+    "gilroy-semibold": require("./src/assets/fonts/gilroy-semibold.ttf"),
+  })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!fontsLoaded) return <AppLoading />
+
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </>
+  )
+}
