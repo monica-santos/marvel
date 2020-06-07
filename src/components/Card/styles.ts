@@ -1,7 +1,7 @@
 import styled from "styled-components/native"
 
 export const CardNameStyled = styled.View`
-  max-width: 70px;
+  max-width: 100px;
 `
 
 export const ImageBackgroundStyled = styled.ImageBackground`

@@ -1,5 +1,5 @@
 import React from "react"
-import { SafeAreaView, ScrollView, View } from "react-native"
+import { SafeAreaView, ScrollView, View, StatusBar } from "react-native"
 
 import Card from "../../components/Card"
 import Category from "../../components/Category"
@@ -70,10 +70,13 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ padding: 20 }}>
-          <Navbar />
-          <View style={{ marginBottom: 24, maxWidth: 300 }}>
+      <StatusBar animated />
+      <Navbar style={{ padding: 20, paddingBottom: 10 }} />
+      <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
+        <View style={{ marginTop: 20, marginBottom: 60 }}>
+          <View
+            style={{ marginBottom: 24, maxWidth: 300, paddingHorizontal: 20 }}
+          >
             <Typograph color='grey' size='14' weight='semibold'>
               Bem vindo ao Marvel Heroes
             </Typograph>
@@ -86,6 +89,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
               flexDirection: "row",
               justifyContent: "space-between",
               marginBottom: 15,
+              paddingHorizontal: 20,
             }}
           >
             <Category name='hero' />
@@ -96,12 +100,16 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
           </View>
 
           {homeSkeleton.map(row => (
-            <View key={row.title} style={{ paddingBottom: 32 }}>
+            <View
+              key={row.title}
+              style={{ paddingBottom: 32, paddingLeft: 20 }}
+            >
               <View
                 style={{
                   flexDirection: "row",
                   justifyContent: "space-between",
                   paddingVertical: 15,
+                  paddingRight: 15,
                 }}
               >
                 <Typograph color='red' size='18' weight='bold'>

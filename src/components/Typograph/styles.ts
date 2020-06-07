@@ -9,7 +9,7 @@ type Props = {
 export const TextStyled = styled.Text<Props>`
   ${({ size, weight, color, theme }) => css`
     font-family: 'gilroy-${weight}';
-    font-size: ${size}px;
-    color: ${theme.colors[color]}
+    font-size: ${+size * 1.25}px;
+    color: ${theme.colors[color]};    
   `}
 `

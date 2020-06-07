@@ -1,15 +1,17 @@
 import React from "react"
+import { ViewProps } from "react-native"
+import { TouchableOpacity } from "react-native-gesture-handler"
 
 import Typograph from "../Typograph"
 import { ImageBackgroundStyled, CardNameStyled } from "./styles"
-import { TouchableOpacity } from "react-native-gesture-handler"
 
-type Props = {
+type CardProps = {
   alterEgo: string
   name: string
   image: any
-  onPress(): void
+  onPress?(): void
 }
+type Props = CardProps & ViewProps
 
 const Card: React.FC<Props> = ({ alterEgo, name, image, onPress, ...rest }) => {
   return (
