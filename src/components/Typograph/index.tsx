@@ -15,9 +15,10 @@ const Typograph: React.FC<Props> = ({
   weight = "regular",
   color = "dark",
   children,
+  ...rest
 }) => {
   return (
-    <TextStyled color={color} size={size} weight={weight}>
+    <TextStyled color={color} size={size} weight={weight} {...rest}>
       {children}
     </TextStyled>
   )
