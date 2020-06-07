@@ -1,13 +1,7 @@
 import styled from "styled-components/native"
 
-export const CardStyled = styled.View`
-  width: 140px;
-  height: 230px;
-  border-radius: 16px;
-`
-
 export const CardNameStyled = styled.View`
-  max-width: 90px;
+  max-width: 70px;
 `
 
 export const ImageBackgroundStyled = styled.ImageBackground`
@@ -17,4 +11,5 @@ export const ImageBackgroundStyled = styled.ImageBackground`
   overflow: hidden;
   border-radius: 16px;
   justify-content: flex-end;
+  margin-right: 15px;
 `

@@ -1,9 +1,10 @@
 import React from "react"
+import { StatusBar } from "react-native"
 import { AppLoading } from "expo"
 import { useFonts } from "@use-expo/font"
 import { ThemeProvider } from "styled-components"
-import Routes from "./src/Routes"
 
+import Routes from "./src/Routes"
 import { theme } from "./src/styles/theme"
 
 export default function App() {
@@ -20,6 +21,11 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <StatusBar
+          barStyle='dark-content'
+          backgroundColor='transparent'
+          translucent
+        />
         <Routes />
       </ThemeProvider>
     </>

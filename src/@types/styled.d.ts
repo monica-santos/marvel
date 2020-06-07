@@ -13,31 +13,31 @@ declare module "styled-components" {
     gradients: {
       blue: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       red: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       purple: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       green: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       pink: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       black: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
       dark: {
         colors: string[]
-        start: string[]
+        start: number[]
       }
     }
   }

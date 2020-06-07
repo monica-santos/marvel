@@ -1,7 +1,7 @@
-import React, { useContext } from "react"
+import React from "react"
 import { ViewProps } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
-import { useTheme, DefaultTheme, ThemeContext } from "styled-components"
+import { useTheme } from "styled-components"
 
 import Icon from "../Icons"
 
@@ -9,7 +9,7 @@ type CategoryProps = {
   name: "human" | "alien" | "antihero" | "villain" | "hero"
 }
 
-type Props = CategoryProps & ViewProps & DefaultTheme
+type Props = CategoryProps & ViewProps
 const mapGradient = {
   hero: "blue",
   villain: "red",
@@ -36,7 +36,7 @@ const Category: React.FC<Props> = ({ name }) => {
       }}
       colors={colors}
     >
-      <Icon name={name} width={32} height={32} />
+      <Icon name={name} width={32} height={32} color='#ffffff' />
     </LinearGradient>
   )
 }

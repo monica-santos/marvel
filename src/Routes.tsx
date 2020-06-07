@@ -1,12 +1,38 @@
 import * as React from "react"
 
-import { NavigationContainer } from "@react-navigation/native"
-import { createStackNavigator } from "@react-navigation/stack"
+import { NavigationContainer, RouteProp } from "@react-navigation/native"
+import {
+  createStackNavigator,
+  StackNavigationProp,
+} from "@react-navigation/stack"
 
 import Home from "./pages/Home"
 import Details from "./pages/Details"
 
-const Stack = createStackNavigator()
+type RootStackParamList = {
+  Home: undefined
+  Details: { char: any }
+}
+
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">
+type HomeScreenRouteProp = RouteProp<RootStackParamList, "Home">
+
+type DetailsScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  "Details"
+>
+type DetailsScreenRouteProp = RouteProp<RootStackParamList, "Details">
+
+export type HomeProps = {
+  navigation: HomeScreenNavigationProp
+  route: HomeScreenRouteProp
+}
+export type DetailsProps = {
+  navigation: DetailsScreenNavigationProp
+  route: DetailsScreenRouteProp
+}
+
+const Stack = createStackNavigator<RootStackParamList>()
 
 function Routes() {
   return (
